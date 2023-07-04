@@ -4,11 +4,28 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:DynamicDisplay_ProofOfConcept"
+    xmlns:views="clr-namespace:DynamicDisplay_ProofOfConcept.Views"
     Shell.FlyoutBehavior="Disabled">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent
+            Title="KaptureBoard"
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Route="MainPage" />
+        <ShellContent
+            Title="UploadPhoto"
+            ContentTemplate="{DataTemplate views:UploadPhoto}"
+            Route="Views/UploadPhoto"/>
+        <Tab Title="Account">
+            <ShellContent
+                Title="AccountPage"
+                ContentTemplate="{DataTemplate views:Account}"
+                Route="Views/Account"/>
+            <ShellContent
+                Title="KaptureTree"
+                ContentTemplate="{DataTemplate views:KaptureTree}"
+                Route="Views/KaptureTree"/>
+        </Tab>
+    </FlyoutItem>
 
 </Shell>

@@ -1,4 +1,6 @@
-﻿namespace DynamicDisplay_ProofOfConcept;
+﻿using AppActions.Icons.Maui;
+
+namespace DynamicDisplay_ProofOfConcept;
 
 public static class MauiProgram
 {
@@ -11,6 +13,11 @@ public static class MauiProgram
 			{
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+			})
+			.ConfigureEssentials(essentials =>
+			{
+				essentials
+					.UseAppActionIcons();
 			});
 
 		return builder.Build();
