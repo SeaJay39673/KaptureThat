@@ -7,25 +7,43 @@
     xmlns:views="clr-namespace:DynamicDisplay_ProofOfConcept.Views"
     Shell.FlyoutBehavior="Disabled">
 
+    <FlyoutItem Route="Login">
+        <ShellContent ContentTemplate="{DataTemplate views:Login}"/>
+    </FlyoutItem>
+
+    <!--<FlyoutItem>
+        <ShellContent
+            Title="Dashboard"
+            ContentTemplate="{DataTemplate views:Dashboard}"
+            Route="Dashboard"/>
+    </FlyoutItem>-->
+
     <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
         <ShellContent
             Title="KaptureBoard"
-            ContentTemplate="{DataTemplate local:MainPage}"
-            Route="MainPage" />
+            ContentTemplate="{DataTemplate views:KaptureBoard}"
+            Route="KaptureBoard" />
         <ShellContent
             Title="UploadPhoto"
             ContentTemplate="{DataTemplate views:UploadPhoto}"
-            Route="Views/UploadPhoto"/>
+            Route="UploadPhoto"/>
         <Tab Title="Account">
             <ShellContent
                 Title="AccountPage"
                 ContentTemplate="{DataTemplate views:Account}"
-                Route="Views/Account"/>
+                Route="Account"/>
             <ShellContent
                 Title="KaptureTree"
                 ContentTemplate="{DataTemplate views:KaptureTree}"
-                Route="Views/KaptureTree"/>
+                Route="KaptureTree"/>
         </Tab>
+    </FlyoutItem>
+
+    <FlyoutItem>
+        <ShellContent 
+            Title="AccountSettings"
+            ContentTemplate="{DataTemplate views:AccountSettings}"
+            Route="AccountSettings"/>
     </FlyoutItem>
 
 </Shell>
