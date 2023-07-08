@@ -12,6 +12,7 @@ namespace DynamicDisplay_ProofOfConcept.ViewModels
         public ICommand Logout { get; }
         public AccountSettingsViewModel() {
             Logout = new Command(async () => {
+                Preferences.Set("LoggedIn", false);
                 await Shell.Current.GoToAsync(state: "//Login");
             });
         }

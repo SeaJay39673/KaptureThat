@@ -12,6 +12,7 @@
             Text="Logout"
             VerticalOptions="End"
             HorizontalOptions="Center"
-            Command="{Binding Logout}"/>
+            Command="{Binding Logout}"
+            Clicked="ReturnToSourcePage"/>
     </VerticalStackLayout>
 </ContentPage>

@@ -30,6 +30,8 @@ namespace DynamicDisplay_ProofOfConcept.ViewModels
                 // Perform API operation/ DB operation
                 var data = LoginModel;
 
+                Preferences.Set("LoggedIn", true);
+
                 await Shell.Current.GoToAsync(state: "//KaptureBoard");
             });
         }

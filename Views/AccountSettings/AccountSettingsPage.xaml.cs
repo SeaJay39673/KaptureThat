@@ -10,4 +10,8 @@ public partial class AccountSettingsPage : ContentPage
 		InitializeComponent();
 		BindingContext = new AccountSettingsViewModel();
 	}
+	public void ReturnToSourcePage(object sender, EventArgs args)
+	{
+		Navigation.PopAsync();
+	}
 }
