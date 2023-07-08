@@ -52,10 +52,7 @@
 	  <MauiXaml Update="Views\Account.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\AccountSettings.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Views\AccountSettingsDetails\NewPage1.xaml">
+	  <MauiXaml Update="Views\AccountSettings\AccountSettingsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\KaptureBoard.xaml">
@@ -64,7 +61,7 @@
 	  <MauiXaml Update="Views\KaptureTree.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\Login.xaml">
+	  <MauiXaml Update="Views\Authentication\Login.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\UploadPhoto.xaml">

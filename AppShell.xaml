@@ -39,11 +39,4 @@
         </Tab>
     </FlyoutItem>
 
-    <FlyoutItem>
-        <ShellContent 
-            Title="AccountSettings"
-            ContentTemplate="{DataTemplate views:AccountSettings}"
-            Route="AccountSettings"/>
-    </FlyoutItem>
-
 </Shell>

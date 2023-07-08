@@ -3,6 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DynamicDisplay_ProofOfConcept.Views.Login"
              BackgroundColor="White"
+             Shell.FlyoutBehavior="Disabled"
+             Shell.NavBarIsVisible="False"
              Title="Login">
     <VerticalStackLayout>
         <Entry Placeholder="Username" Text="{Binding LoginModel.Username}"/>
