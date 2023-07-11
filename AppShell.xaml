@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+﻿<?xml version="1.0" encoding="UTF-8" ?>
 <Shell
     x:Class="DynamicDisplay_ProofOfConcept.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
@@ -21,22 +21,22 @@
 
     <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
         <ShellContent x:Name="KaptureBoard"
-            Title="KaptureBoard"
+            Title="Kapture Board"
             ContentTemplate="{DataTemplate views:KaptureBoard}"
-            Route="KaptureBoard" />
+            Route="KaptureBoard"/>
         <ShellContent
-            Title="UploadPhoto"
+            Title="Upload Photo"
             ContentTemplate="{DataTemplate views:UploadPhoto}"
             Route="UploadPhoto"/>
         <Tab Title="Account">
             <ShellContent
-                Title="AccountPage"
+                Title="Account Page"
                 ContentTemplate="{DataTemplate views:Account}"
                 Route="Account"/>
             <ShellContent
-                Title="KaptureTree"
+                Title="Kapture Tree"
                 ContentTemplate="{DataTemplate views:KaptureTree}"
-                Route="KaptureTree"/>
+                Route="KaptureTree" />
         </Tab>
     </FlyoutItem>
 
