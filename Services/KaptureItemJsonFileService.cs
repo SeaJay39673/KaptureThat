@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Text.Json;
 using DynamicDisplay_ProofOfConcept.Models;
 
@@ -13,13 +14,32 @@ namespace DynamicDisplay_ProofOfConcept.Services
             _jsonFileName = jsonFileName;
 		}
 
-		public IEnumerable<KaptureBoardItemModel> GetKaptureBoardItems()
+		public ObservableCollection<KaptureBoardItemModel> GetKaptureBoardItems()
 		{
-			var test = FileSystem.Current.AppDataDirectory;
-			using (var jsonFileReader = File.OpenText(_jsonFileName))
-			{
-				return JsonSerializer.Deserialize<KaptureBoardItemModel[]>(jsonFileReader.ReadToEnd());
-			}
+            string content = @"[
+                {
+                  ""Title"": ""My First Kapture!"",
+                  ""Classification"": ""Tiger"",
+                  ""ID"": 1,
+                  ""TimePosted"": ""2023-07-09T10:41:52.501Z""
+                },
+                {
+                  ""Title"": ""My Second Kapture!"",
+                  ""Classification"": ""Basil"",
+                  ""ID"": 2,
+                  ""TimePosted"": ""2023-07-09T10:41:52.501Z""
+                },
+                {
+                  ""Title"": ""I'm really proud of this one..."",
+                  ""Classification"": ""BettaFish"",
+                  ""ID"": 3,
+                  ""TimePosted"": ""2023-07-09T10:41:52.501Z""
+                }
+            ]
+            ";
+
+            return JsonSerializer.Deserialize<ObservableCollection<KaptureBoardItemModel>>(content);
+			
 		}
 	}
 }
