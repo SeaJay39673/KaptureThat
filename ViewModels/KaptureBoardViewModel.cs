@@ -24,7 +24,7 @@ namespace DynamicDisplay_ProofOfConcept.ViewModels
 
 		public KaptureBoardViewModel()
 		{
-			_jsonFileService = new("../Resources/Raw/TestingKaptureBoardItems.json");
+			_jsonFileService = new("TestingKaptureBoardItems.json");
 			_kaptureBoardItems = _jsonFileService.GetKaptureBoardItems();
 		}
 

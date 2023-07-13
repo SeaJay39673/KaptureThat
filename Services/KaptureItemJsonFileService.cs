@@ -14,32 +14,17 @@ namespace DynamicDisplay_ProofOfConcept.Services
             _jsonFileName = jsonFileName;
 		}
 
+		public async Task<string> ReadFromFile()
+		{
+			using Stream filestream = await FileSystem.Current.OpenAppPackageFileAsync(_jsonFileName);
+			using StreamReader reader = new StreamReader(filestream);
+			return reader.ReadToEnd();
+		}
 		public ObservableCollection<KaptureBoardItemModel> GetKaptureBoardItems()
 		{
-            string content = @"[
-                {
-                  ""Title"": ""My First Kapture!"",
-                  ""Classification"": ""Tiger"",
-                  ""ID"": 1,
-                  ""TimePosted"": ""2023-07-09T10:41:52.501Z""
-                },
-                {
-                  ""Title"": ""My Second Kapture!"",
-                  ""Classification"": ""Basil"",
-                  ""ID"": 2,
-                  ""TimePosted"": ""2023-07-09T10:41:52.501Z""
-                },
-                {
-                  ""Title"": ""I'm really proud of this one..."",
-                  ""Classification"": ""BettaFish"",
-                  ""ID"": 3,
-                  ""TimePosted"": ""2023-07-09T10:41:52.501Z""
-                }
-            ]
-            ";
-
-            return JsonSerializer.Deserialize<ObservableCollection<KaptureBoardItemModel>>(content);
-			
+			string json = ReadFromFile().Result;
+			var content = JsonSerializer.Deserialize<ObservableCollection<KaptureBoardItemModel>>(json);
+			return content;
 		}
 	}
 }

@@ -1,13 +1,12 @@
 ﻿using System;
 namespace DynamicDisplay_ProofOfConcept.Models
 {
-	public class KaptureBoardItemModel
-	{
-        public string Title { get; }
-		public string Classification { get; }
-		public int ID { get; }
-		public DateTime TimePosted { get; }
-		
-	}
+    public class KaptureBoardItemModel
+    {
+        public string Caption { get; set; }
+        public string Classification { get; set; }
+        public int ID { get; set; }
+        public DateTime TimePosted { get; set; }
+    }
 }
 

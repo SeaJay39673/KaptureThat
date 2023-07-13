@@ -6,27 +6,16 @@
              Title="Kapture Board"
              xmlns:local="clr-namespace:DynamicDisplay_ProofOfConcept.ViewModels">
 
-    <ContentPage.BindingContext>
-            <local:KaptureBoardViewModel />
-    </ContentPage.BindingContext>
-
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI! Kapture Board"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-        <CollectionView ItemsSource="{Binding KaptureBoardItems}">
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <Label Text="{Binding Title}" />
-
-                </DataTemplate>
-
-            </CollectionView.ItemTemplate>
-
-        </CollectionView>
-  
-        
-    </VerticalStackLayout>
+    <CollectionView ItemsSource="{Binding KaptureBoardItems}">
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <VerticalStackLayout>
+                    <Label Text="{Binding Caption}"/>
+                    <Label Text="{Binding Classification}"/>
+                    <Label Text="================================"/>
+                </VerticalStackLayout>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
 
 </ContentPage>
