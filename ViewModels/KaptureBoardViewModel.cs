@@ -21,13 +21,17 @@ namespace DynamicDisplay_ProofOfConcept.ViewModels
             }
         }
 
-      
+        public ICommand NavigateToAccount { get; private set; }
 
         public KaptureBoardViewModel()
         {
             _jsonFileService = new("../Resources/Raw/TestingKaptureBoardItems.json");
             _jsonFileService = new("TestingKaptureBoardItems.json");
             _kaptureBoardItems = _jsonFileService.GetKaptureBoardItems();
+
+            NavigateToAccount = new Command(async () => {
+                await Shell.Current.GoToAsync("//AccountViewModel");
+            });
         }
 
         public void OnPropertyChanged([CallerMemberName] string name = "") =>

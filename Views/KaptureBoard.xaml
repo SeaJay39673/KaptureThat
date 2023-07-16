@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DynamicDisplay_ProofOfConcept.Views.KaptureBoard"
              Title="Kapture Board"
-             xmlns:local="clr-namespace:DynamicDisplay_ProofOfConcept.ViewModels" >
+             xmlns:local="clr-namespace:DynamicDisplay_ProofOfConcept.ViewModels"
+             xmlns:helpers="clr-namespace:DynamicDisplay_ProofOfConcept.Helpers">
 
     <ScrollView>
 
@@ -15,13 +16,41 @@
                     <Border Margin="0"
                             StrokeShape="RoundRectangle 8">
                             <VerticalStackLayout>
+                                <HorizontalStackLayout>
+                                    <Border Margin="10">
+                                        <Border.StrokeShape>
+                                            <RoundRectangle CornerRadius="30" />
+                                        </Border.StrokeShape>
+                                        <Image Source="dotnet_bot.svg"
+                                               WidthRequest="30"
+                                               />
+                                    </Border>
+                                    <Label Text="THE.NET Bot"
+                                           VerticalTextAlignment="Center"
+                                           FontSize="16">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="The .Net Bot"
+                                                      FontAttributes="Bold, Italic">
+                                                    <Span.GestureRecognizers>
+                                                        <TapGestureRecognizer Command="{Binding NavigateToAccount}" />
+                                                    </Span.GestureRecognizers>
+
+                                                </Span>
+
+                                            </FormattedString>
+
+                                        </Label.FormattedText>
+
+                                    </Label>
+                                </HorizontalStackLayout>
                                 <Label Text="{Binding Caption}"
-                                       FontAttributes="Bold"
-                                       FontSize="Medium"
-                                       Margin="10" />
-                                <Label Text="{Binding Classification}"
+                                           FontAttributes="Bold"
+                                           FontSize="Medium"
+                                           Margin="10" />
+                                <Image Source="{Binding Source}"
                                        Margin="10"/>
-                                <Image Source="dotnet_bot.svg"
+                                <Label Text="{Binding Classification}"
                                        Margin="10"/>
                                 <Grid>
                                     <Grid.RowDefinitions>
@@ -34,8 +63,10 @@
                                     </Grid.ColumnDefinitions>
                                     <Border Grid.Column="0"
                                             Margin="0">
+                                       
                                         <Button Text="Like"
-                                                Command="{Binding HandleLike}"/>
+                                                />
+
                                     </Border>
                                     <Border Grid.Column="1"
                                             Margin="0">
@@ -53,7 +84,7 @@
                     </Border>
                 </VerticalStackLayout>
             </DataTemplate>
-        </CollectionView.ItemTemplate>
+            </CollectionView.ItemTemplate>
     </CollectionView>
     </VerticalStackLayout>
     </ScrollView>

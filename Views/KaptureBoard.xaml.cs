@@ -6,7 +6,7 @@ public partial class KaptureBoard : ContentPage
 {
 	public KaptureBoard()
 	{
-		InitializeComponent();
+        InitializeComponent();
 		BindingContext = new KaptureBoardViewModel();
 	}
 
