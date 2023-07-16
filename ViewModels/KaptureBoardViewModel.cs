@@ -1,6 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Windows.Input;
 using DynamicDisplay_ProofOfConcept.Models;
 using DynamicDisplay_ProofOfConcept.Services;
 namespace DynamicDisplay_ProofOfConcept.ViewModels
@@ -19,6 +20,8 @@ namespace DynamicDisplay_ProofOfConcept.ViewModels
                 OnPropertyChanged();
             }
         }
+
+      
 
         public KaptureBoardViewModel()
         {

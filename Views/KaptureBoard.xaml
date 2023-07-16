@@ -11,14 +11,17 @@
         <CollectionView.ItemTemplate>
             <DataTemplate>
                 <VerticalStackLayout Margin="5">
-                    <Frame Margin="0">
-                        <Frame.Content>
+                    <Border Margin="0"
+                            StrokeShape="RoundRectangle 8">
                             <VerticalStackLayout>
                                 <Label Text="{Binding Caption}"
                                        FontAttributes="Bold"
-                                       FontSize="Medium"/>
-                                <Label Text="{Binding Classification}"/>
-                                <Image Source="dotnet_bot.svg" />
+                                       FontSize="Medium"
+                                       Margin="10" />
+                                <Label Text="{Binding Classification}"
+                                       Margin="10"/>
+                                <Image Source="dotnet_bot.svg"
+                                       Margin="10"/>
                                 <Grid>
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="50" />
@@ -28,14 +31,25 @@
                                         <ColumnDefinition Width="*" />
                                         <ColumnDefinition Width="*" />
                                     </Grid.ColumnDefinitions>
-                                    <Border >
-                                        <Label Text="Like" />
+                                    <Border Grid.Column="0"
+                                            Margin="0">
+                                        <Button Text="Like"
+                                                Command="{Binding HandleLike}"/>
                                     </Border>
-                                    
+                                    <Border Grid.Column="1"
+                                            Margin="0">
+                                        <Button Text="Comment"
+                                              />
+                                    </Border>
+                                    <Border Grid.Column="2"
+                                            Margin="0">
+                                        <Button Text="Share"
+                                               />
+
+                                    </Border>
                                 </Grid>
                             </VerticalStackLayout>
-                        </Frame.Content>
-                    </Frame>
+                    </Border>
                 </VerticalStackLayout>
             </DataTemplate>
         </CollectionView.ItemTemplate>
