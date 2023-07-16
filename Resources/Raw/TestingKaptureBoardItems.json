@@ -1,0 +1,20 @@
+﻿[
+  {
+    "Caption": "My First Kapture!",
+    "Classification": "Tiger",
+    "ID": 1,
+    "TimePosted": "2023-07-09T10:41:52.501Z"
+  },
+  {
+    "Caption": "My Second Kapture!",
+    "Classification": "Basil",
+    "ID": 2,
+    "TimePosted": "2023-07-09T10:41:52.501Z"
+  },
+  {
+    "Caption": "I'm really proud of this one...",
+    "Classification": "BettaFish",
+    "ID": 3,
+    "TimePosted": "2023-07-09T10:41:52.501Z"
+  }
+]
