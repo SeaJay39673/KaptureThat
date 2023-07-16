@@ -13,4 +13,8 @@ public partial class Account : ContentPage
     {
         await Navigation.PushAsync(new AccountSettingsPage());
     }
+    async public void Kaptures(object sender, System.EventArgs e)
+    {
+        await Navigation.PushAsync(new KaptureTree());
+    }
 }
