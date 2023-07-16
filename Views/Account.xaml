@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:helpers="clr-namespace:DynamicDisplay_ProofOfConcept.Helpers"
              x:Class="DynamicDisplay_ProofOfConcept.Views.Account"
              Title="Account">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Settings" Clicked="AccountSettings"/>
+        <ToolbarItem Text="Kaptures" Clicked="Kaptures" IconImageSource="{FontImageSource FontFamily=MaterialDesignIcons, Glyph={x:Static helpers:MaterialDesingIconFonts.FamilyTree}}"/>
+        <ToolbarItem Text="Settings" Clicked="AccountSettings" IconImageSource="{FontImageSource FontFamily=MaterialDesignIcons, Glyph={x:Static helpers:MaterialDesingIconFonts.Cog}}"/>
     </ContentPage.ToolbarItems>
     <ScrollView>
         <VerticalStackLayout>

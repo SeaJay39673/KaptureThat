@@ -5,6 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:DynamicDisplay_ProofOfConcept"
     xmlns:views="clr-namespace:DynamicDisplay_ProofOfConcept.Views"
+    xmlns:helpers="clr-namespace:DynamicDisplay_ProofOfConcept.Helpers"
     Shell.FlyoutBehavior="Disabled"
     x:Name="KaptureShell">
 
@@ -19,25 +20,56 @@
             Route="Dashboard"/>
     </FlyoutItem>-->
 
-    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
-        <ShellContent x:Name="KaptureBoard"
-            Title="KaptureBoard"
+    <!--<FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent         
+            x:Name="KaptureBoard"
+            Title="Kapture Board"
+            Icon="{FontImageSource FontFamily=MaterialDesignIcons, Glyph={x:Static helpers:MaterialDesingIconFonts.HomeOutline}}"
             ContentTemplate="{DataTemplate views:KaptureBoard}"
             Route="KaptureBoard" />
         <ShellContent
-            Title="UploadPhoto"
+            Title="Upload"
+            Icon="{FontImageSource FontFamily=MaterialDesignIcons, Glyph={x:Static helpers:MaterialDesingIconFonts.CameraOutline}}"
             ContentTemplate="{DataTemplate views:UploadPhoto}"
             Route="UploadPhoto"/>
-        <Tab Title="Account">
+
+        <Tab Title="Account"
+             Icon="{FontImageSource FontFamily=MaterialDesignIcons, Glyph={x:Static helpers:MaterialDesingIconFonts.Account}}">
             <ShellContent
-                Title="AccountPage"
+                Title="Account"
+                Icon="{FontImageSource FontFamily=MaterialDesignIcons, Glyph={x:Static helpers:MaterialDesingIconFonts.Account}, Color=Black, Size=100}"
                 ContentTemplate="{DataTemplate views:Account}"
                 Route="Account"/>
             <ShellContent
                 Title="KaptureTree"
+                Icon="{FontImageSource FontFamily=MaterialDesignIcons, Glyph={x:Static helpers:MaterialDesingIconFonts.FamilyTree}}"
                 ContentTemplate="{DataTemplate views:KaptureTree}"
                 Route="KaptureTree"/>
         </Tab>
-    </FlyoutItem>
+    </FlyoutItem>-->
+    <TabBar>
+        <Tab 
+            Title="Kapture Board"
+            Icon="{FontImageSource FontFamily=MaterialDesignIcons, Glyph={x:Static helpers:MaterialDesingIconFonts.HomeOutline}}">
+            <ShellContent 
+                ContentTemplate="{DataTemplate views:KaptureBoard}" 
+                x:Name="KaptureBoard"
+                Route="KaptureBoard"/>
+        </Tab>
+        <Tab
+            Title="Upload"
+            Icon="{FontImageSource FontFamily=MaterialDesignIcons, Glyph={x:Static helpers:MaterialDesingIconFonts.CameraOutline}}">
+            <ShellContent 
+                ContentTemplate="{DataTemplate views:UploadPhoto}"
+                Route="UploadPhoto"/>
+        </Tab>
+        <Tab
+            Title="Account"
+            Icon="{FontImageSource FontFamily=MaterialDesignIcons, Glyph={x:Static helpers:MaterialDesingIconFonts.Account}}">
+            <ShellContent 
+                ContentTemplate="{DataTemplate views:Account}"
+                Route="Account"/>
+        </Tab>
+    </TabBar>
 
 </Shell>
