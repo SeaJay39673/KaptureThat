@@ -17,4 +17,8 @@ public partial class AppShell : Shell
             KaptureShell.CurrentItem = Login;
         }
     }
+    protected override async void OnNavigating(ShellNavigatingEventArgs args)
+    {
+        var target = args.Target;
+    }
 }
