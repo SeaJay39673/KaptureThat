@@ -1,16 +1,34 @@
-﻿using DynamicDisplay_ProofOfConcept.Views;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DynamicDisplay_ProofOfConcept.Models;
+using DynamicDisplay_ProofOfConcept.Services;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace DynamicDisplay_ProofOfConcept.ViewModels
 {
-    class AccountViewModel
+    class AccountViewModel : INotifyPropertyChanged
     {
+        private KaptureItemJsonFileService _jsonFS;
+        public event PropertyChangedEventHandler PropertyChanged;
+        private AccountModel _account;
+
+        public AccountModel Account {
+            get => _account;
+            set {
+                _account = value;
+                OnPropertyChanged();
+            }
+        }
+
         public AccountViewModel()
         {
+            _jsonFS = new KaptureItemJsonFileService("TestingKaptureBoardItems.json");
+            _account = new AccountModel("Kyler Legault",
+                "I like betta fish a lot. Let's look at some plants, baby!",
+                ImageSource.FromFile("profile.webp"),
+                _jsonFS.GetKaptureBoardItems());
         }
+
+        public void OnPropertyChanged([CallerMemberName] string name = "") =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
     }
 }

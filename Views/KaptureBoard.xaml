@@ -3,7 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DynamicDisplay_ProofOfConcept.Views.KaptureBoard"
              Title="Kapture Board"
-             xmlns:local="clr-namespace:DynamicDisplay_ProofOfConcept.ViewModels"
              xmlns:helpers="clr-namespace:DynamicDisplay_ProofOfConcept.Helpers">
 
     <ScrollView>
@@ -56,26 +55,18 @@
                                         <ColumnDefinition Width="*" />
                                         <ColumnDefinition Width="*" />
                                     </Grid.ColumnDefinitions>
-                                    
                                         <Button Text="{x:Static helpers:MaterialDesingIconFonts.ThumbUpOutline}"
                                                 FontFamily="MaterialDesignIcons"
                                                 FontSize="25"
-                                                Grid.Column="0"/>
-                                    
-                                    
-                                            
+                                                Grid.Column="0"/>     
                                         <Button Text="{x:Static helpers:MaterialDesingIconFonts.Chat}"
                                                 FontFamily="MaterialDesignIcons"
                                                 FontSize="25"
-                                                Grid.Column="1"/>
-                                    
-                                            
+                                                Grid.Column="1"/>  
                                         <Button Text="{x:Static helpers:MaterialDesingIconFonts.Share}"
                                                 FontFamily="MaterialDesignIcons"
                                                 FontSize="25"
                                                 Grid.Column="2"/>
-
-                                    
                                 </Grid>
                             </VerticalStackLayout>
                     </Border>
