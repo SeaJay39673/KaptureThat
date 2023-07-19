@@ -8,6 +8,6 @@ public partial class KaptureBoard : ContentPage
 	{
         InitializeComponent();
 		BindingContext = new KaptureBoardViewModel();
-	}
+	} 
 
 }

@@ -22,8 +22,7 @@
                                             <RoundRectangle CornerRadius="30" />
                                         </Border.StrokeShape>
                                         <Image Source="dotnet_bot.svg"
-                                               WidthRequest="30"
-                                               />
+                                               WidthRequest="30" />
                                     </Border>
                                     <Label Text="THE.NET Bot"
                                            VerticalTextAlignment="Center"
@@ -35,23 +34,19 @@
                                                     <Span.GestureRecognizers>
                                                         <TapGestureRecognizer Command="{Binding NavigateToAccount}" />
                                                     </Span.GestureRecognizers>
-
                                                 </Span>
-
                                             </FormattedString>
-
                                         </Label.FormattedText>
-
                                     </Label>
                                 </HorizontalStackLayout>
-                                <Label Text="{Binding Caption}"
-                                           FontAttributes="Bold"
-                                           FontSize="Medium"
-                                           Margin="10" />
                                 <Image Source="{Binding Source}"
                                        Margin="10"/>
                                 <Label Text="{Binding Classification}"
                                        Margin="10"/>
+                                <Label Text="{Binding Caption}"
+                                           FontAttributes="Bold"
+                                           FontSize="Medium"
+                                           Margin="10" />
                                 <Grid>
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="50" />
@@ -61,24 +56,26 @@
                                         <ColumnDefinition Width="*" />
                                         <ColumnDefinition Width="*" />
                                     </Grid.ColumnDefinitions>
-                                    <Border Grid.Column="0"
-                                            Margin="0">
-                                       
-                                        <Button Text="Like"
-                                                />
+                                    
+                                        <Button Text="{x:Static helpers:MaterialDesingIconFonts.ThumbUpOutline}"
+                                                FontFamily="MaterialDesignIcons"
+                                                FontSize="25"
+                                                Grid.Column="0"/>
+                                    
+                                    
+                                            
+                                        <Button Text="{x:Static helpers:MaterialDesingIconFonts.Chat}"
+                                                FontFamily="MaterialDesignIcons"
+                                                FontSize="25"
+                                                Grid.Column="1"/>
+                                    
+                                            
+                                        <Button Text="{x:Static helpers:MaterialDesingIconFonts.Share}"
+                                                FontFamily="MaterialDesignIcons"
+                                                FontSize="25"
+                                                Grid.Column="2"/>
 
-                                    </Border>
-                                    <Border Grid.Column="1"
-                                            Margin="0">
-                                        <Button Text="Comment"
-                                              />
-                                    </Border>
-                                    <Border Grid.Column="2"
-                                            Margin="0">
-                                        <Button Text="Share"
-                                               />
-
-                                    </Border>
+                                    
                                 </Grid>
                             </VerticalStackLayout>
                     </Border>
