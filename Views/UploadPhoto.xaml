@@ -3,14 +3,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:cv="clr-namespace:Camera.MAUI;assembly=Camera.MAUI"
              xmlns:helpers="clr-namespace:DynamicDisplay_ProofOfConcept.Helpers"
+             xmlns:views="clr-namespace:DynamicDisplay_ProofOfConcept.Views"
              x:Class="DynamicDisplay_ProofOfConcept.Views.UploadPhoto"
-             Shell.TabBarIsVisible="False"
              Title="Upload Photo">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Back" Clicked="Back" IconImageSource="{FontImageSource FontFamily=MaterialDesignIcons, Glyph={x:Static helpers:MaterialDesingIconFonts.ArrowLeft}}"/>
+        <ToolbarItem Clicked="Back" IconImageSource="{FontImageSource FontFamily=MaterialDesignIcons, Glyph={x:Static helpers:MaterialDesingIconFonts.ArrowLeft}}"/>
     </ContentPage.ToolbarItems>
     <VerticalStackLayout>
-        <cv:CameraView x:Name="cameraView" WidthRequest="400" HeightRequest="400"/>
-        <Button FontFamily="MaterialDesignIcons" Text="{x:Static helpers:MaterialDesingIconFonts.CameraOutline}" Clicked="Kapture"/>
+        <cv:CameraView  x:Name="cameraView" WidthRequest="400" HeightRequest="750" 
+                       CamerasLoaded="CameraView_CamerasLoaded"/>
+        <HorizontalStackLayout Margin="0,-100,0,0" HorizontalOptions="Center" Spacing="80">
+            <Button Text="Test"/>
+            <Button CornerRadius="75" WidthRequest="75" HeightRequest="75" FontFamily="MaterialDesignIcons" Text="{x:Static helpers:MaterialDesingIconFonts.CameraOutline}" Clicked="Kapture" FontSize="30"/>
+            <Button Text="Test2"/>
+        </HorizontalStackLayout>
     </VerticalStackLayout>  
 </ContentPage>
