@@ -7,11 +7,18 @@ public partial class UploadPhoto : ContentPage
 {
     public double ScreenWidth { get; set; }
     public double ScreenHeight { get; set; }
+    public int ButtonValue { get; set; }
+    public int ButtonFont { get; set; }
+    public Microsoft.Maui.Thickness MarginPlacement { get; set; }
 	public UploadPhoto()
 	{
         ScreenWidth = getWidth();
         ScreenHeight = getHeight();
+        ButtonValue  = (int)(ScreenHeight / 9);
+        ButtonFont = (int)(ButtonValue / 2);
+        MarginPlacement = new Microsoft.Maui.Thickness(0, -(ButtonValue + 100), 0, 0);
 		InitializeComponent();
+        this.BindingContext = this;
     }
 
     private void CameraView_CamerasLoaded(object sender, EventArgs e)
@@ -19,11 +26,11 @@ public partial class UploadPhoto : ContentPage
         if (cameraView.NumCamerasDetected > 0)
         {
             cameraView.Camera = cameraView.Cameras.First();
-            cameraView.AutoStartPreview = true;
-            //MainThread.InvokeOnMainThreadAsync(async () => {
-            //    var stopResult = await cameraView.StopCameraAsync();
-            //    var startResult = await cameraView.StartCameraAsync();
-            //});
+            MainThread.InvokeOnMainThreadAsync(async () =>
+            {
+                var stopResult = await cameraView.StopCameraAsync();
+                var startResult = await cameraView.StartCameraAsync();
+            });
         }
     }
 	async public void Back(object sender, EventArgs e) {
@@ -34,10 +41,10 @@ public partial class UploadPhoto : ContentPage
 	}
     public double getWidth()
     {
-        return DeviceDisplay.Current.MainDisplayInfo.Width / 2;
+        return DeviceDisplay.Current.MainDisplayInfo.Width / DeviceDisplay.Current.MainDisplayInfo.Density;
     }
     public double getHeight()
     {
-        return DeviceDisplay.Current.MainDisplayInfo.Height / 2;
+        return DeviceDisplay.Current.MainDisplayInfo.Height / DeviceDisplay.Current.MainDisplayInfo.Density;
     }
 }

@@ -5,17 +5,35 @@
              xmlns:helpers="clr-namespace:DynamicDisplay_ProofOfConcept.Helpers"
              xmlns:views="clr-namespace:DynamicDisplay_ProofOfConcept.Views"
              x:Class="DynamicDisplay_ProofOfConcept.Views.UploadPhoto"
+             Shell.NavBarIsVisible="False"
              Title="Upload Photo">
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Clicked="Back" IconImageSource="{FontImageSource FontFamily=MaterialDesignIcons, Glyph={x:Static helpers:MaterialDesingIconFonts.ArrowLeft}}"/>
-    </ContentPage.ToolbarItems>
-    <VerticalStackLayout>
-        <cv:CameraView  x:Name="cameraView" WidthRequest="400" HeightRequest="750" 
+    <VerticalStackLayout BackgroundColor="Black">
+        <cv:CameraView x:Name="cameraView" WidthRequest="{Binding ScreenWidth}" HeightRequest="{Binding ScreenHeight}" 
                        CamerasLoaded="CameraView_CamerasLoaded"/>
-        <HorizontalStackLayout Margin="0,-100,0,0" HorizontalOptions="Center" Spacing="80">
-            <Button Text="Test"/>
-            <Button CornerRadius="75" WidthRequest="75" HeightRequest="75" FontFamily="MaterialDesignIcons" Text="{x:Static helpers:MaterialDesingIconFonts.CameraOutline}" Clicked="Kapture" FontSize="30"/>
-            <Button Text="Test2"/>
+        <HorizontalStackLayout Margin="{Binding MarginPlacement}" HorizontalOptions="Center" Spacing="{Binding ButtonFont}">
+            <Button 
+                CornerRadius="{Binding ButtonValue}" 
+                WidthRequest="{Binding ButtonValue}" 
+                HeightRequest="{Binding ButtonValue}" 
+                FontFamily="MaterialDesignIcons" 
+                FontSize="{Binding ButtonFont}"
+                Text="{x:Static helpers:MaterialDesingIconFonts.ArrowLeft}" 
+                Clicked="Back" />
+            <Button 
+                CornerRadius="{Binding ButtonValue}" 
+                WidthRequest="{Binding ButtonValue}" 
+                HeightRequest="{Binding ButtonValue}" 
+                FontFamily="MaterialDesignIcons" 
+                FontSize="{Binding ButtonFont}"
+                Text="{x:Static helpers:MaterialDesingIconFonts.CameraOutline}" 
+                Clicked="Kapture"/>
+            <Button 
+                CornerRadius="{Binding ButtonValue}"
+                WidthRequest="{Binding ButtonValue}"
+                HeightRequest="{Binding ButtonValue}"
+                FontFamily="MaterialDesignIcons"
+                FontSize="{Binding ButtonFont}"
+                Text="{x:Static helpers:MaterialDesingIconFonts.ImagePlus}"/>
         </HorizontalStackLayout>
     </VerticalStackLayout>  
 </ContentPage>
