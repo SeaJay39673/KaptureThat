@@ -11,9 +11,11 @@ namespace DynamicDisplay_ProofOfConcept.ViewModels
         public event PropertyChangedEventHandler PropertyChanged;
         private AccountModel _account;
 
-        public AccountModel Account {
+        public AccountModel Account
+        {
             get => _account;
-            set {
+            set
+            {
                 _account = value;
                 OnPropertyChanged();
             }

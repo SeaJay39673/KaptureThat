@@ -21,12 +21,24 @@ namespace DynamicDisplay_ProofOfConcept.ViewModels
             }
         }
 
+        private Color _postOpacity;
+        public Color PostOpacity
+        {
+            get => _postOpacity;
+            set
+            {
+                _postOpacity = value;
+                OnPropertyChanged();
+            }
+        }
+
         public ICommand NavigateToAccount { get; private set; }
 
         public KaptureBoardViewModel()
         {
             _jsonFileService = new("TestingKaptureBoardItems.json");
             _kaptureBoardItems = _jsonFileService.GetKaptureBoardItems();
+            _postOpacity = new Color(255, 0, 0, (float).7);
 
             NavigateToAccount = new Command(async () => {
                 await Shell.Current.GoToAsync("//AccountViewModel");

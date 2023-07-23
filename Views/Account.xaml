@@ -4,16 +4,43 @@
              xmlns:helpers="clr-namespace:DynamicDisplay_ProofOfConcept.Helpers"
              x:Class="DynamicDisplay_ProofOfConcept.Views.Account"
              xmlns:local="clr-namespace:DynamicDisplay_ProofOfConcept.ViewModels"
+             x:DataType="local:AccountViewModel"
              Title="Account">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Kaptures" Clicked="Kaptures" IconImageSource="{FontImageSource FontFamily=MaterialDesignIcons, Glyph={x:Static helpers:MaterialDesingIconFonts.FamilyTree}}"/>
         <ToolbarItem Text="Settings" Clicked="AccountSettings" IconImageSource="{FontImageSource FontFamily=MaterialDesignIcons, Glyph={x:Static helpers:MaterialDesingIconFonts.Cog}}"/>
     </ContentPage.ToolbarItems>
     <ScrollView>
-        <VerticalStackLayout>
-            <Label Text="{Binding Account.Name}"/>
+        <VerticalStackLayout Spacing="40">
+            <HorizontalStackLayout>
+                <Border Margin="25,25,25,0">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="50" />
+                    </Border.StrokeShape>
+                    <Image Source="{Binding Account.ProfilePicture}"
+                           WidthRequest="100" />
+                </Border>
+                <Label Text="{Binding Account.Name}"
+                       VerticalTextAlignment="Center"
+                       FontSize="28"/>
+            </HorizontalStackLayout>
+            <Label Text="{Binding Account.Bio}"
+                   Margin="25"/>
+            <FlexLayout BindableLayout.ItemsSource="{Binding Account.Posts}"
+                        FlexLayout.Basis="20"
+                        Wrap="Wrap"
+                        Direction="Row">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <Image Source="{Binding Source}"
+                               WidthRequest="100"
+                               HeightRequest="100"
+                               Aspect="AspectFill"/>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+
+            </FlexLayout>
+            
         </VerticalStackLayout>
-        
-    
     </ScrollView>
 </ContentPage>
