@@ -62,6 +62,9 @@
 	  <MauiXaml Update="Views\AccountSettings\AccountSettingsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\AccountSettings\ManageAccount.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\KaptureBoard.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

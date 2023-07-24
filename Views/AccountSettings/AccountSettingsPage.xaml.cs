@@ -8,10 +8,16 @@ public partial class AccountSettingsPage : ContentPage
 	public AccountSettingsPage()
 	{
 		InitializeComponent();
-		BindingContext = new AccountSettingsViewModel();
 	}
-	public void ReturnToSourcePage(object sender, EventArgs args)
+	async public void Logout(object sender, EventArgs e)
 	{
-		Navigation.PopAsync();
+        Preferences.Set("LoggedIn", false);
+        await Shell.Current.GoToAsync(state: "//Login");
+		await Navigation.PopAsync();
+    }
+	async public void ManageAccount(object sender, EventArgs e)
+	{
+		await Navigation.PushAsync(new ManageAccount());
 	}
+
 }
