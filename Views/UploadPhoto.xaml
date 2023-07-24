@@ -1,12 +1,39 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:cv="clr-namespace:Camera.MAUI;assembly=Camera.MAUI"
+             xmlns:helpers="clr-namespace:DynamicDisplay_ProofOfConcept.Helpers"
+             xmlns:views="clr-namespace:DynamicDisplay_ProofOfConcept.Views"
              x:Class="DynamicDisplay_ProofOfConcept.Views.UploadPhoto"
-             Title="UploadPhoto">
-    <VerticalStackLayout>
-        <Label 
-            Text="UploadPhoto"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             Shell.NavBarIsVisible="False"
+             Title="Upload Photo">
+    <VerticalStackLayout BackgroundColor="Black">
+        <cv:CameraView x:Name="cameraView" WidthRequest="{Binding ScreenWidth}" HeightRequest="{Binding ScreenHeight}" 
+                       CamerasLoaded="CameraView_CamerasLoaded"/>
+        <HorizontalStackLayout Margin="{Binding MarginPlacement}" HorizontalOptions="Center" Spacing="{Binding ButtonFont}">
+            <Button 
+                CornerRadius="{Binding ButtonValue}" 
+                WidthRequest="{Binding ButtonValue}" 
+                HeightRequest="{Binding ButtonValue}" 
+                FontFamily="MaterialDesignIcons" 
+                FontSize="{Binding ButtonFont}"
+                Text="{x:Static helpers:MaterialDesingIconFonts.ArrowLeft}" 
+                Clicked="Back" />
+            <Button 
+                CornerRadius="{Binding ButtonValue}" 
+                WidthRequest="{Binding ButtonValue}" 
+                HeightRequest="{Binding ButtonValue}" 
+                FontFamily="MaterialDesignIcons" 
+                FontSize="{Binding ButtonFont}"
+                Text="{x:Static helpers:MaterialDesingIconFonts.CameraOutline}" 
+                Clicked="Kapture"/>
+            <Button 
+                CornerRadius="{Binding ButtonValue}"
+                WidthRequest="{Binding ButtonValue}"
+                HeightRequest="{Binding ButtonValue}"
+                FontFamily="MaterialDesignIcons"
+                FontSize="{Binding ButtonFont}"
+                Text="{x:Static helpers:MaterialDesingIconFonts.ImagePlus}"/>
+        </HorizontalStackLayout>
+    </VerticalStackLayout>  
 </ContentPage>

@@ -1,4 +1,5 @@
 ﻿using AppActions.Icons.Maui;
+using Camera.MAUI;
 
 namespace DynamicDisplay_ProofOfConcept;
 
@@ -9,6 +10,7 @@ public static class MauiProgram
 		var builder = MauiApp.CreateBuilder();
 		builder
 			.UseMauiApp<App>()
+			.UseMauiCameraView()
 			.ConfigureFonts(fonts =>
 			{
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");

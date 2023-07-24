@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net6.0-android;net6.0-ios;net6.0-maccatalyst</TargetFrameworks>
-		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net6.0-windows10.0.19041.0</TargetFrameworks>
+		<TargetFrameworks>net7.0-android;net7.0-ios;net7.0-maccatalyst</TargetFrameworks>
+		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net7.0-windows10.0.19041.0</TargetFrameworks>
 		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
 		<!-- <TargetFrameworks>$(TargetFrameworks);net6.0-tizen</TargetFrameworks> -->
 		<OutputType>Exe</OutputType>
@@ -78,17 +78,11 @@
 
 	<ItemGroup>
 	  <PackageReference Include="AppActions.Icons.Maui" Version="1.0.0" />
-	  <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.8" />
+	  <PackageReference Include="Camera.MAUI" Version="1.4.4" />
+	  <PackageReference Include="DocumentFormat.OpenXml" Version="2.20.0" />
+	  <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.9" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <None Remove="Resources\Raw\TestingKaptureBoardItems.json" />
-	  <None Remove="Services\" />
-	</ItemGroup>
-	<ItemGroup>
-	  <BundleResource Include="Resources\Raw\TestingKaptureBoardItems.json" />
-	</ItemGroup>
-	<ItemGroup>
-	  <Folder Include="Services\" />
-	</ItemGroup>
+	<ProjectExtensions><VisualStudio><UserProperties XamarinHotReloadDebuggerTimeoutExceptionDynamicDisplay_ProofOfConceptHideInfoBar="True" /></VisualStudio></ProjectExtensions>
+
 </Project>

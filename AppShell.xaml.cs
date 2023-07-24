@@ -1,4 +1,6 @@
-﻿namespace DynamicDisplay_ProofOfConcept;
+﻿using DynamicDisplay_ProofOfConcept.Views;
+
+namespace DynamicDisplay_ProofOfConcept;
 
 public partial class AppShell : Shell
 {
@@ -17,4 +19,13 @@ public partial class AppShell : Shell
             KaptureShell.CurrentItem = Login;
         }
     }
+    protected override void OnNavigating(ShellNavigatingEventArgs args)
+    {
+        var target = args.Target;
+        if (target.Location.OriginalString == "//UploadPhoto")
+        {
+            KaptureShell.CurrentItem = new UploadPhoto();
+        }
+    }
+
 }
