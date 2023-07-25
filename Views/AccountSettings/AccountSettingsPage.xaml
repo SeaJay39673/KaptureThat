@@ -3,19 +3,22 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DynamicDisplay_ProofOfConcept.Views.AccountSettings.AccountSettingsPage"
              Title="Account Settings">
+    <ContentPage.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="5,5,5,5"/>
+            <Setter Property="HorizontalOptions" Value="Fill"/>
+        </Style>
+    </ContentPage.Resources>
     <VerticalStackLayout>
         <Button
             Text="Manage Account"
-            Clicked="ManageAccount"
-            Margin="10,10,10,10"/>
+            Clicked="ManageAccount"/>
         <Button 
-            Margin="10,10,10,10"
             Text="Themes"/>
         <Button
             Text="Logout"
             VerticalOptions="End"
             HorizontalOptions="Center"
-            Margin="10,10,10,10"
             Clicked="Logout"/>
     </VerticalStackLayout>
 </ContentPage>
