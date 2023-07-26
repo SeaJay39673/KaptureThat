@@ -19,5 +19,8 @@ public partial class AccountSettingsPage : ContentPage
 	{
 		await Navigation.PushAsync(new ManageAccount());
 	}
-
+	async public void Themes(object sender, EventArgs e)
+	{
+		await Navigation.PushAsync(new ThemesPage());
+	}
 }

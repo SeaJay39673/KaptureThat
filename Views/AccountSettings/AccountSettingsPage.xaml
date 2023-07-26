@@ -14,7 +14,8 @@
             Text="Manage Account"
             Clicked="ManageAccount"/>
         <Button 
-            Text="Themes"/>
+            Text="Themes"
+            Clicked="Themes"/>
         <Button
             Text="Logout"
             VerticalOptions="End"
