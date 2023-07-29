@@ -4,6 +4,7 @@
              xmlns:helpers="clr-namespace:DynamicDisplay_ProofOfConcept.Helpers"
              x:Class="DynamicDisplay_ProofOfConcept.Views.Account"
              xmlns:local="clr-namespace:DynamicDisplay_ProofOfConcept.ViewModels"
+             xmlns:models="clr-namespace:DynamicDisplay_ProofOfConcept.Models"
              x:DataType="local:AccountViewModel"
              Title="Account">
     <ContentPage.ToolbarItems>
@@ -25,17 +26,19 @@
                        FontSize="28"/>
             </HorizontalStackLayout>
             <Label Text="{Binding Account.Bio}"
-                   Margin="25"/>
+                   Margin="15"/>
             <FlexLayout BindableLayout.ItemsSource="{Binding Account.Posts}"
-                        FlexLayout.Basis="20"
                         Wrap="Wrap"
-                        Direction="Row">
+                        Direction="Row"
+                       >
                 <BindableLayout.ItemTemplate>
-                    <DataTemplate>
-                        <Image Source="{Binding Source}"
-                               WidthRequest="100"
-                               HeightRequest="100"
-                               Aspect="AspectFill"/>
+                    <DataTemplate x:DataType="models:KaptureBoardItemModel">
+                        <Border WidthRequest="{Binding ItemWidth, Source={local:AccountViewModel}}"
+                                HeightRequest="{Binding ItemWidth, Source={local:AccountViewModel}}">
+                            <ImageButton Source="{Binding Source}" 
+                                         Aspect="AspectFill"
+                                         />
+                        </Border >
                     </DataTemplate>
                 </BindableLayout.ItemTemplate>
 

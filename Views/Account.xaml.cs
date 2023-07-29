@@ -8,6 +8,7 @@ public partial class Account : ContentPage
     public Account() {
         InitializeComponent();
         BindingContext = new AccountViewModel();
+        
     }
 
     async public void AccountSettings(object sender, System.EventArgs e)
@@ -18,4 +19,6 @@ public partial class Account : ContentPage
     {
         await Navigation.PushAsync(new KaptureTree());
     }
+
+  
 }
