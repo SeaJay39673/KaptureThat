@@ -8,6 +8,9 @@ namespace DynamicDisplay_ProofOfConcept.ViewModels
 {
     class AccountViewModel : INotifyPropertyChanged
     {
+        public void OnPropertyChanged([CallerMemberName] string name = "") =>
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+
         private KaptureItemJsonFileService _jsonFS;
         public event PropertyChangedEventHandler PropertyChanged;
         private AccountModel _account;
@@ -24,6 +27,7 @@ namespace DynamicDisplay_ProofOfConcept.ViewModels
 
         public double ItemWidth { get; set; }
 
+
         public AccountViewModel()
         {
             _jsonFS = new KaptureItemJsonFileService("TestingKaptureBoardItems.json");
@@ -32,10 +36,8 @@ namespace DynamicDisplay_ProofOfConcept.ViewModels
                 ImageSource.FromFile("profile.webp"),
                 _jsonFS.GetKaptureBoardItems());
             ItemWidth = getScreenWidth() / 4;
-        }
 
-        public void OnPropertyChanged([CallerMemberName] string name = "") =>
-        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
 
         public double getScreenWidth()
         {
