@@ -6,7 +6,8 @@
              xmlns:local="clr-namespace:DynamicDisplay_ProofOfConcept.ViewModels"
              xmlns:models="clr-namespace:DynamicDisplay_ProofOfConcept.Models"
              x:DataType="local:AccountViewModel"
-             Title="Account">
+             Title="Account"
+             xmlns:views="clr-namespace:DynamicDisplay_ProofOfConcept.Views">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Kaptures" Clicked="Kaptures" IconImageSource="{FontImageSource FontFamily=MaterialDesignIcons, Glyph={x:Static helpers:MaterialDesingIconFonts.FamilyTree}}"/>
         <ToolbarItem Text="Settings" Clicked="AccountSettings" IconImageSource="{FontImageSource FontFamily=MaterialDesignIcons, Glyph={x:Static helpers:MaterialDesingIconFonts.Cog}}"/>
@@ -35,15 +36,14 @@
                     <DataTemplate x:DataType="models:KaptureBoardItemModel">
                         <Border WidthRequest="{Binding ItemWidth, Source={local:AccountViewModel}}"
                                 HeightRequest="{Binding ItemWidth, Source={local:AccountViewModel}}">
-                            <ImageButton Source="{Binding Source}" 
-                                         Aspect="AspectFill"
-                                         />
+                            <Image Source="{Binding Source}" 
+                                   Aspect="AspectFill" />
+                            
                         </Border >
                     </DataTemplate>
                 </BindableLayout.ItemTemplate>
 
             </FlexLayout>
-            
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
